@@ -1,11 +1,11 @@
-﻿<Window x:Name="MainMenu" x:Class="FitnessClub.MainMenu"
+﻿<Window x:Name="MainWindow" x:Class="FitnessClub.MainMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Fitness Clue - Main Menu" Height="311.765" Width="410.924">
+        Title="Fitness Clue - Main Window" Height="311.765" Width="410.924">
     <Grid>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="29" Margin="137,92,0,0" VerticalAlignment="Top" Width="143"/>
         <Button x:Name="btnPricingMgt" Content="Pricing Management" HorizontalAlignment="Left" Height="29" Margin="137,137,0,0" VerticalAlignment="Top" Width="143"/>
