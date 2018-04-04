@@ -5,6 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Fitness Club - Membership Sales" Height="357.143" Width="470.589">
-    <Grid/>
+        Title="Fitness Club - Membership Sales" Height="520.659" Width="591.637">
+    <Grid>
+        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Height="30" Margin="45,62,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label x:Name="lblStartDate" Content="Membership Start Date:" HorizontalAlignment="Left" Height="30" Margin="238,62,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="lblAdditionalFeatures" Content="Additional Features?" HorizontalAlignment="Left" Height="30" Margin="45,159,0,0" VerticalAlignment="Top" Width="148"/>
+        <ComboBox x:Name="cblMembershipType" HorizontalAlignment="Left" Height="21" Margin="45,102,0,0" VerticalAlignment="Top" Width="123"/>
+    </Grid>
 </Window>

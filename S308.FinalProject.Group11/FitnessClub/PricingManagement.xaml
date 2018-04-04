@@ -5,21 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Window2" Height="473.949" Width="589.076">
+        Title="Window2" Height="444.616" Width="589.076">
     <Grid HorizontalAlignment="Left" Width="581">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="290*"/>
             <ColumnDefinition Width="291*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="222*"/>
-            <RowDefinition Height="221*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="319*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="lblPriceInfo" Content="Price Information" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Height="35" Width="123"/>
-        <Rectangle Fill="#FFB27973" HorizontalAlignment="Left" Height="170" Stroke="Black" VerticalAlignment="Top" Width="291" Grid.Column="1" Margin="0,52,0,0"/>
-        <Label x:Name="lblPriceInstruction" Content="Please use this page to change membership availability and &#xD;&#xA;membership price" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="42" Width="328"/>
-        <Label x:Name="lblSelectType" Content="Please Select the Membership Type" Grid.Column="1" HorizontalAlignment="Left" Margin="18,93,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboSelectType" Grid.Column="1" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" Width="120"/>
+        <Rectangle Fill="#FF4F6457" HorizontalAlignment="Left" Height="322" Stroke="Black" VerticalAlignment="Top" Width="591" Grid.ColumnSpan="2" Margin="-7,0,-3,-3" Grid.Row="1"/>
+        <Label x:Name="lblSelectType" Content="Select the membership type you &#xD;&#xA;want to modify" HorizontalAlignment="Left" Margin="34,15,0,0" VerticalAlignment="Top" Grid.Row="1" Height="46" Width="231" Grid.Column="1"/>
+        <Rectangle Fill="#FFD9B441" HorizontalAlignment="Left" Height="95" Stroke="Black" VerticalAlignment="Top" Width="591" Grid.ColumnSpan="2" Margin="-7,0,-3,0"/>
+        <Label x:Name="lblPriceInfo" Content="Price Information" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Height="35" Width="160" FontFamily="Vani" FontWeight="Bold" FontSize="16" Foreground="#FFF9F4F4"/>
+        <Label x:Name="lblPriceInstruction" Content="Please use this page to change membership availability and &#xA;membership price" Margin="10,36,230,0" VerticalAlignment="Top" Height="42" FontSize="10.667" Grid.ColumnSpan="2" Foreground="#FFFBF6F6"/>
+        <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="57,61,0,0" VerticalAlignment="Top" Width="174" Grid.Row="1" Height="22" Grid.Column="1">
+            <ComboBoxItem Content="Individual 1 Month"/>
+        </ComboBox>
+        <Label x:Name="lblPrice" Content="Price to:" HorizontalAlignment="Left" Margin="17,121,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="53"/>
+        <Label x:Name="lblMembershipTypeAvailability" Content="Type Available?" HorizontalAlignment="Left" Margin="17,167,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="92"/>
+        <TextBox x:Name="txtPriceChange" HorizontalAlignment="Left" Height="23" Margin="121,124,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <CheckBox x:Name="chbYes" Content="Yes" HorizontalAlignment="Left" Margin="121,173,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="15" Width="37" Checked="chbYes_Checked"/>
+        <CheckBox x:Name="chbNo" Content="No" HorizontalAlignment="Left" Margin="190,173,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="15" Width="35"/>
+        <Button x:Name="btnSave_" Content="Save" Grid.Column="1" HorizontalAlignment="Left" Margin="34,229,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="20"/>
+        <Button x:Name="btnClear_" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="174,229,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnClear__Click" Height="20"/>
+        <TextBox x:Name="txtPriceChange_Copy" HorizontalAlignment="Left" Height="212" Margin="10,61,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" TextChanged="txtPriceChange_Copy_TextChanged"/>
+        <Label x:Name="lblMembershipType" Content="Membership Type Information" HorizontalAlignment="Left" Margin="49,32,0,0" VerticalAlignment="Top" Grid.Row="1" Height="29" Width="231"/>
 
     </Grid>
 </Window>

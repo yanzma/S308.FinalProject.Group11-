@@ -28,5 +28,20 @@ namespace FitnessClub
         {
 
         }
+
+        private void txtPriceChange_Copy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnClear__Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void chbYes_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
