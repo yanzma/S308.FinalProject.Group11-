@@ -5,11 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Fitness Club - Membership Sales" Height="520.659" Width="591.637">
-    <Grid>
-        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Height="30" Margin="45,62,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label x:Name="lblStartDate" Content="Membership Start Date:" HorizontalAlignment="Left" Height="30" Margin="238,62,0,0" VerticalAlignment="Top" Width="148"/>
-        <Label x:Name="lblAdditionalFeatures" Content="Additional Features?" HorizontalAlignment="Left" Height="30" Margin="45,159,0,0" VerticalAlignment="Top" Width="148"/>
-        <ComboBox x:Name="cblMembershipType" HorizontalAlignment="Left" Height="21" Margin="45,102,0,0" VerticalAlignment="Top" Width="123"/>
+        Title="Fitness Club - Membership Sales" Height="639.659" Width="821.637">
+    <Grid Margin="1,0,-1,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="205*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Height="30" Margin="41,68,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label x:Name="lblStartDate" Content="Membership Start Date:" HorizontalAlignment="Left" Height="30" Margin="41,145,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="lblAdditionalFeatures" Content="Additional Features?" HorizontalAlignment="Left" Height="30" Margin="41,220,0,0" VerticalAlignment="Top" Width="148"/>
+        <ComboBox x:Name="cblMembershipType" HorizontalAlignment="Left" Height="26" Margin="41,103,0,0" VerticalAlignment="Top" Width="123">
+            <ComboBoxItem Content="Individual 1 Month"/>
+            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Two Person 1 Month"/>
+            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Family 1 Month"/>
+            <ComboBoxItem Content="Family 12 Month"/>
+        </ComboBox>
+        <DatePicker x:Name="dtpStartDate" HorizontalAlignment="Left" Height="26" Margin="41,175,0,0" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="txtPreviewWindow" HorizontalAlignment="Left" Height="252" Margin="25,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336"/>
+        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Height="30" Margin="34,68,0,0" VerticalAlignment="Top" Width="69" Grid.Column="1"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Height="30" Margin="34,103,0,0" VerticalAlignment="Top" Width="69" Grid.Column="1"/>
+        <Label x:Name="lblCardType" Content="Credit Card Type:" HorizontalAlignment="Left" Height="30" Margin="34,269,0,0" VerticalAlignment="Top" Width="103" Grid.Column="1"/>
+        <Label x:Name="lblPhone" Content="Contact Number:" HorizontalAlignment="Left" Height="30" Margin="34,183,0,0" VerticalAlignment="Top" Width="103" Grid.Column="1"/>
+        <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Height="30" Margin="35,226,0,0" VerticalAlignment="Top" Width="45" Grid.Column="1"/>
+        <Label x:Name="lblGender" Content="Gender:" HorizontalAlignment="Left" Height="30" Margin="34,138,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <ComboBox x:Name="cboGender" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="154,145,0,0" VerticalAlignment="Top" Width="142">
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Not Provided"/>
+        </ComboBox>
+        <Label x:Name="lblAge" Content="Age (Optional):" HorizontalAlignment="Left" Height="30" Margin="35,327,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" RenderTransformOrigin="0.5,1.333"/>
+        <Label x:Name="lblWeight" Content="Weight (Optional):" HorizontalAlignment="Left" Height="30" Margin="35,374,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1" RenderTransformOrigin="0.5,1.333"/>
+        <Label x:Name="lblWeightInstruction" Content="(e.g. 150 lbs)" HorizontalAlignment="Left" Height="30" Margin="301,375,-5,0" VerticalAlignment="Top" Width="114" Grid.Column="1" RenderTransformOrigin="0.5,1.333" FontStyle="Italic" FontSize="10.667"/>
+        <Label x:Name="lblGoal" Content="Professional Fitness Goal (Optional):" HorizontalAlignment="Left" Height="30" Margin="34,418,0,0" VerticalAlignment="Top" Width="202" Grid.Column="1"/>
+        <ComboBox x:Name="cboFitnessGoal" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="154,453,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Athletic Performance"/>
+            <ComboBoxItem Content="Overall Health"/>
+            <ComboBoxItem Content="Strength Training Weight Loss"/>
+            <ComboBoxItem Content="Weight Management "/>
+        </ComboBox>
+        <TextBox x:Name="txtLastName" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="txtFirstName" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="txtAge" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="txtWeight" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="txtPhoneNumber" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox x:Name="txtEmail" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="154,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <Label x:Name="lblMembershipSalesTitle" Content="Membership Sales" HorizontalAlignment="Left" Height="39" Margin="41,10,0,0" VerticalAlignment="Top" Width="234"/>
+        <CheckBox x:Name="chbYes" Content="CheckBox" HorizontalAlignment="Left" Height="12" Margin="41,254,0,0" VerticalAlignment="Top" Width="14"/>
+        <CheckBox x:Name="chbNo" Content="CheckBox" HorizontalAlignment="Left" Height="12" Margin="145,254,0,0" VerticalAlignment="Top" Width="14"/>
+        <Label x:Name="lblFeaturesSelectYes" Content="Yes" HorizontalAlignment="Left" Height="38" Margin="55,247,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="lblFeaturesSelectNo" Content="No" HorizontalAlignment="Left" Height="38" Margin="159,247,0,0" VerticalAlignment="Top" Width="64"/>
+        <Button x:Name="btnSubmitInput" Content="Submit" HorizontalAlignment="Left" Height="26" Margin="228,285,0,0" VerticalAlignment="Top" Width="109"/>
     </Grid>
 </Window>
