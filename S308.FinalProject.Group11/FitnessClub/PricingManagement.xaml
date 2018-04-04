@@ -1,0 +1,25 @@
+﻿<Window x:Class="FitnessClub.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub"
+        mc:Ignorable="d"
+        Title="Window2" Height="473.949" Width="589.076">
+    <Grid HorizontalAlignment="Left" Width="581">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290*"/>
+            <ColumnDefinition Width="291*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="222*"/>
+            <RowDefinition Height="221*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblPriceInfo" Content="Price Information" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Height="35" Width="123"/>
+        <Rectangle Fill="#FFB27973" HorizontalAlignment="Left" Height="170" Stroke="Black" VerticalAlignment="Top" Width="291" Grid.Column="1" Margin="0,52,0,0"/>
+        <Label x:Name="lblPriceInstruction" Content="Please use this page to change membership availability and &#xD;&#xA;membership price" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="42" Width="328"/>
+        <Label x:Name="lblSelectType" Content="Please Select the Membership Type" Grid.Column="1" HorizontalAlignment="Left" Margin="18,93,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboSelectType" Grid.Column="1" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
