@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Fitness Club - Membership Sales" Height="639.659" Width="821.637">
+        Title="Fitness Club - Membership Sales" Height="640" Width="800">
     <Grid Margin="1,0,-1,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="202*"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MemberInfo" Height="457.377" Width="696.721">
+        Title="MemberInfo" Height="640" Width="800">
     <Grid>
         <Label x:Name="lblTitle" Content="Lookup member information" HorizontalAlignment="Left" Margin="75,29,0,0" VerticalAlignment="Top" Width="408" Height="39" FontSize="16"/>
         <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top"/>

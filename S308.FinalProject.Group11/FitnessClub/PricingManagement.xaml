@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Window2" Height="473.949" Width="589.076">
+        Title="Window2" Height="640" Width="800">
     <Grid HorizontalAlignment="Left" Width="581">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="290*"/>
