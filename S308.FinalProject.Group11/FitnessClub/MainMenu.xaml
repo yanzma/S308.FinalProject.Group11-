@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="Fitness Clue - Main Window" Height="640" Width="800">
     <Grid>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="28" Margin="281,132,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button x:Name="btnPricingMgt" Content="Pricing Management" HorizontalAlignment="Left" Height="30" Margin="281,218,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button x:Name="btnMembershipInfo" Content="Membership Information" HorizontalAlignment="Left" Height="29" Margin="281,298,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="552,358,0,0" VerticalAlignment="Top" Width="76"/>
+        <Image x:Name="imgBackground" HorizontalAlignment="Left" Height="523" Margin="-24,92,-468,-6" VerticalAlignment="Top" Width="1284" Source="Image/fitness_image.jpg"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="50" Margin="326,191,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="White"/>
+        <Button x:Name="btnPricingMgt" Content="Pricing Management" HorizontalAlignment="Left" Height="50" Margin="326,316,0,0" VerticalAlignment="Top" Width="143" BorderBrush="White" Background="White"/>
+        <Button x:Name="btnMembershipInfo" Content="Membership Information" HorizontalAlignment="Left" Height="60" Margin="326,400,0,0" VerticalAlignment="Top" Width="206" Background="White" BorderBrush="White" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Height="38" Margin="556,489,0,0" VerticalAlignment="Top" Width="92" Foreground="White" BorderBrush="Black" Background="Black" FontSize="18.667" FontWeight="Bold"/>
         <Label x:Name="lblMWTitle" Content="Welcome to Fitness Club!" HorizontalAlignment="Left" Height="38" Margin="66,38,0,0" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16">
             <Label.RenderTransform>
                 <TransformGroup>
