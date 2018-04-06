@@ -8,14 +8,14 @@
         Title="MemberInfo" Height="640" Width="800">
     <Grid>
         <Label x:Name="lblTitle" Content="Lookup member information" HorizontalAlignment="Left" Margin="75,29,0,0" VerticalAlignment="Top" Width="408" Height="39" FontSize="16"/>
-        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="368,88,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbPhoneNum" Content="Phone Number" HorizontalAlignment="Left" Margin="55,119,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="178,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="439,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPhoneNum" HorizontalAlignment="Left" Height="23" Margin="178,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="462,130,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Height="223" Margin="55,176,0,0" TextWrapping="Wrap" Text="First Name: Alice             Last Name: White                  Membership Type: Individual 1 month&#xD;&#xA;Start Date: 1/1/2018       End Date: 2/1/2018               Membership Cost per Month: $ 9.99&#xD;&#xA;Additional Features:&#xD;&#xA;Person Training Plan: No&#xD;&#xA;Locker Rental: No&#xD;&#xA;" VerticalAlignment="Top" Width="579"/>
+        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="368,88,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lbPhoneNum" Content="Phone Number" HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="196,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" Text="white"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="439,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <TextBox x:Name="txtPhoneNum" HorizontalAlignment="Left" Height="30" Margin="196,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="460,137,0,0" VerticalAlignment="Top" Width="80" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Height="379" Margin="55,197,0,0" TextWrapping="Wrap" Text="First Name: Alice&#x9;&#x9;Last Name: White&#x9;&#x9;Gender: Female&#xD;&#xA;Age: 25&#x9;&#x9;&#x9;Wight: 120&#x9;&#x9;Email: whiteali@gmail.com          &#xD;&#xA;Fitness Goal:&#xD;&#xA;       &#xD;&#xA;Membership Type: Individual 1 month            Start Date: 1/1/2018       End Date: 2/1/2018               &#xD;&#xA;Membership Cost per Month: $ 9.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Subtotal: $9.99&#xD;&#xA;&#xA;Additional Features:&#xA;&#x9;&#x9;Person Training Plan: No&#xA;&#x9;&#x9;Locker Rental: No&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Total: $9.99&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="684" TextChanged="txtOutput_TextChanged" FontSize="16"/>
 
     </Grid>
 </Window>
