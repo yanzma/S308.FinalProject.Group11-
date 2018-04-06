@@ -15,10 +15,10 @@
             <RowDefinition Height="32*"/>
             <RowDefinition Height="175*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FF6B8173" HorizontalAlignment="Left" Height="311" Stroke="Black" VerticalAlignment="Top" Width="591" Grid.ColumnSpan="2" Margin="-7,7,-3,-3" Grid.Row="1"/>
+        <Rectangle Fill="#FF6B8173" HorizontalAlignment="Left" Height="318" Stroke="Black" VerticalAlignment="Top" Width="591" Grid.ColumnSpan="2" Margin="-7,0,-3,-3" Grid.Row="1"/>
         <Label x:Name="lblSelectType" Content="Select a Membership Type " HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="266" FontFamily="Vani" FontWeight="Bold" FontSize="13.333" Foreground="#FFF9F3F3"/>
         <Rectangle Fill="#FFD9B441" HorizontalAlignment="Left" Height="65" Stroke="Black" VerticalAlignment="Top" Width="591" Grid.ColumnSpan="2" Margin="-7,0,-3,0" Grid.RowSpan="2"/>
-        <Label x:Name="lblPriceInfo" Content="Pricing Management" HorizontalAlignment="Left" Margin="184,13,0,0" VerticalAlignment="Top" Height="35" Width="213" FontFamily="Vani" FontWeight="Bold" FontSize="18.667" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblPriceInfo" Content="Pricing Management" HorizontalAlignment="Left" Margin="184,13,0,0" VerticalAlignment="Top" Height="35" Width="213" FontFamily="Vani" FontWeight="Bold" FontSize="18.667" Foreground="#FFF5EFEF" Grid.ColumnSpan="2"/>
         <Label x:Name="lblPriceInstruction" Content="Guidance: &#xD;&#xA;- Select the membership type to check the current&#xD;&#xA;information &#xD;&#xA;- If you want to make any changes about that&#xD;&#xA;membership type, modify the information in the &#xD;&#xA;&quot;Make Changes Here&quot; section" Margin="32,73,10,0" VerticalAlignment="Top" Height="85" FontSize="10.667" Foreground="#FFF7F5ED" Grid.Column="1" Grid.Row="1" BorderBrush="#FFF9F7F1" FontFamily="Arial"/>
         <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="14,43,0,0" VerticalAlignment="Top" Width="266" Grid.Row="1" Height="22">
             <ComboBoxItem Content="Individual 1 Month"/>
