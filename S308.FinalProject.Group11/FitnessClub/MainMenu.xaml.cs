@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Yanzhi Ma ; Yiwen Chen; Yijing Zhao 
+//image source: https://www.equinox.com/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,21 +1,29 @@
-﻿<Window x:Class="FitnessClub.MemberInfo"
+﻿<Window x:Name="MemberInformation" x:Class="FitnessClub.MemberInfo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MemberInfo" Height="640" Width="800">
+        Title="Member Information" Height="640" Width="800">
     <Grid>
-        <Label x:Name="lblTitle" Content="Lookup member information" HorizontalAlignment="Left" Margin="75,29,0,0" VerticalAlignment="Top" Width="408" Height="39" FontSize="16"/>
-        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="368,88,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lbPhoneNum" Content="Phone Number" HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="196,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" Text="white"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="439,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="txtPhoneNum" HorizontalAlignment="Left" Height="30" Margin="196,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="460,137,0,0" VerticalAlignment="Top" Width="80" Height="32" FontSize="16"/>
-        <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Height="379" Margin="55,197,0,0" TextWrapping="Wrap" Text="First Name: Alice&#x9;&#x9;Last Name: White&#x9;&#x9;Gender: Female&#xD;&#xA;Age: 25&#x9;&#x9;&#x9;Wight: 120&#x9;&#x9;Email: whiteali@gmail.com          &#xD;&#xA;Fitness Goal:&#xD;&#xA;       &#xD;&#xA;Membership Type: Individual 1 month            Start Date: 1/1/2018       End Date: 2/1/2018               &#xD;&#xA;Membership Cost per Month: $ 9.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Subtotal: $9.99&#xD;&#xA;&#xA;Additional Features:&#xA;&#x9;&#x9;Person Training Plan: No&#xA;&#x9;&#x9;Locker Rental: No&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Total: $9.99&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="684" FontSize="16"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF998181" Offset="1"/>
+                <GradientStop Color="#FFD6D6D6"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="91,114,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="1"/>
+        <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Margin="432,114,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="5"/>
+        <Label x:Name="lbPhoneNum" Content="Phone Number:" HorizontalAlignment="Left" Margin="91,154,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="3"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="232,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" Text="Smith" TabIndex="2"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="503,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" TabIndex="6"/>
+        <TextBox x:Name="txtPhoneNum" HorizontalAlignment="Left" Height="30" Margin="232,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" TabIndex="4"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="616,184,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" TabIndex="7" FontWeight="Bold"/>
+        <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Height="325" Margin="55,247,0,0" TextWrapping="Wrap" Text="First Name: Alice&#x9;&#x9;Last Name: Smith&#x9;              Gender: Female&#xA;Age: 25&#x9;&#x9;&#x9;Wight: 120&#x9;&#x9;Email: whiteali@gmail.com          &#xA;Fitness Goal:&#xA;       &#xA;Membership Type: Individual 1 month            Start Date: 1/1/2018       End Date: 2/1/2018               &#xA;Membership Cost per Month: $ 9.99&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Subtotal: $9.99&#xA;&#xA;Additional Features:&#xA;&#x9;&#x9;Person Training Plan: No&#xA;&#x9;&#x9;Locker Rental: No&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Total: $9.99&#xA;&#xA;" VerticalAlignment="Top" Width="684" FontSize="17.333" TabIndex="8" IsReadOnly="True"/>
+        <Label x:Name="lblTitle" VerticalAlignment="Top" Width="792" Height="55" FontSize="37.333" TabIndex="0" FontWeight="Bold" Margin="0,25,0,0" Content="Member Information" Background="{x:Null}" Foreground="Black" FontFamily="Century Schoolbook" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="456,184,0,0" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold"/>
+        <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="9"/>
 
     </Grid>
 </Window>
