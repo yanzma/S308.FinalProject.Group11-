@@ -38,7 +38,7 @@
         <Label x:Name="lblAvailablity" Content="Availability:" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
         <Label x:Name="lblAvailabilityResult" Content="Available" HorizontalAlignment="Left" Margin="175,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
         <Label x:Name="lblPriceTo" Content="Change Price To:" HorizontalAlignment="Left" Margin="32,297,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="143" TabIndex="7" FontSize="17.333"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="224,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold"/>
         <Label x:Name="lblMembershipTypeAvailability" Content="Type Available?" HorizontalAlignment="Left" Margin="32,346,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="143" TabIndex="9" FontSize="17.333"/>
         <TextBox x:Name="txtPriceChange" HorizontalAlignment="Left" Height="26" Margin="198,300,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" TabIndex="8" FontSize="17.333" Text="11.99"/>
