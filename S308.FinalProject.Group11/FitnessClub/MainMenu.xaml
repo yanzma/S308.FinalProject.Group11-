@@ -8,10 +8,10 @@
         Title="Main Window" Height="640" Width="800">
     <Grid Background="White">
         <Image x:Name="imgBackground" HorizontalAlignment="Left" Height="508" Margin="-12,113,-8,-12" VerticalAlignment="Top" Width="812" Source="pic/fitness_image.jpg"/>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="54" Margin="276,205,0,0" VerticalAlignment="Top" Width="240" Background="White" BorderBrush="White" FontSize="18.667" FontWeight="Bold" TabIndex="1"/>
-        <Button x:Name="btnPricingMgt" Content="Pricing Management" HorizontalAlignment="Left" Height="54" Margin="276,317,0,0" VerticalAlignment="Top" Width="240" BorderBrush="White" Background="White" FontSize="18.667" FontWeight="Bold" TabIndex="2"/>
-        <Button x:Name="btnMembershipInfo" Content="Membership Information" HorizontalAlignment="Left" Height="54" Margin="276,437,0,0" VerticalAlignment="Top" Width="240" Background="White" BorderBrush="White" FontSize="18.667" FontWeight="Bold" TabIndex="3"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Height="44" Margin="650,542,0,0" VerticalAlignment="Top" Width="119" Foreground="Black" BorderBrush="Black" Background="White" FontSize="18.667" FontWeight="Bold" TabIndex="4"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="54" Margin="276,205,0,0" VerticalAlignment="Top" Width="240" Background="White" BorderBrush="White" FontSize="18.667" FontWeight="Bold" TabIndex="1" Click="btnMembershipSales_Click"/>
+        <Button x:Name="btnPricingMgt" Content="Pricing Management" HorizontalAlignment="Left" Height="54" Margin="276,317,0,0" VerticalAlignment="Top" Width="240" BorderBrush="White" Background="White" FontSize="18.667" FontWeight="Bold" TabIndex="2" Click="btnPricingMgt_Click"/>
+        <Button x:Name="btnMembershipInfo" Content="Membership Information" HorizontalAlignment="Left" Height="54" Margin="276,437,0,0" VerticalAlignment="Top" Width="240" Background="White" BorderBrush="White" FontSize="18.667" FontWeight="Bold" TabIndex="3" Click="btnMembershipInfo_Click"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Height="44" Margin="650,542,0,0" VerticalAlignment="Top" Width="119" Foreground="Black" BorderBrush="Black" Background="White" FontSize="18.667" FontWeight="Bold" TabIndex="4" Click="btnExit_Click"/>
         <Label x:Name="lblMWTitle" Content="Welcome to Fitness Club!" HorizontalAlignment="Left" Height="91" Margin="-3,25,0,0" VerticalAlignment="Top" Width="795" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="48" Foreground="Black" TabIndex="0" HorizontalContentAlignment="Center" FontFamily="Century Schoolbook">
             <Label.RenderTransform>
                 <TransformGroup>
