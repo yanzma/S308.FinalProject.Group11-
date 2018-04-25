@@ -17,9 +17,9 @@ namespace FitnessClub
     /// <summary>
     /// Interaction logic for Window2.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class PriceManagement : Window
     {
-        public Window2()
+        public PriceManagement()
         {
             InitializeComponent();
         }

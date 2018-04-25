@@ -1,4 +1,4 @@
-﻿<Window x:Name="PricingManagement_" x:Class="FitnessClub.Window2"
+﻿<Window x:Name="PricingManagement_" x:Class="FitnessClub.PriceManagement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -38,14 +38,14 @@
         <Label x:Name="lblAvailablity" Content="Availability:" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
         <Label x:Name="lblAvailabilityResult" Content="Available" HorizontalAlignment="Left" Margin="175,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
         <Label x:Name="lblPriceTo" Content="Change Price To:" HorizontalAlignment="Left" Margin="32,297,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="143" TabIndex="7" FontSize="17.333"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold" Click="btnSave_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="224,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold"/>
         <Label x:Name="lblMembershipTypeAvailability" Content="Type Available?" HorizontalAlignment="Left" Margin="32,346,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="143" TabIndex="9" FontSize="17.333"/>
         <TextBox x:Name="txtPriceChange" HorizontalAlignment="Left" Height="26" Margin="198,300,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" TabIndex="8" FontSize="17.333" Text="11.99"/>
         <CheckBox x:Name="chbYes" Content="Yes" HorizontalAlignment="Left" Margin="198,352,0,0" Grid.Row="1" VerticalAlignment="Top" Height="21" Width="49" TabIndex="10" FontSize="17.333"/>
         <CheckBox x:Name="chbNo" Content="No" HorizontalAlignment="Left" Margin="296,354,0,0" Grid.Row="1" VerticalAlignment="Top" Height="21" Width="49" TabIndex="9" FontSize="17.333" IsChecked="True"/>
         <Label x:Name="lblChange" Content="Make Changes Here" HorizontalAlignment="Left" Margin="32,247,0,0" VerticalAlignment="Top" Grid.Row="1" Height="45" Width="285" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="6"/>
-        <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="15"/>
+        <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="15" Click="btnBack_Click"/>
 
     </Grid>
 </Window>
