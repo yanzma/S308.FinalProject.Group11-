@@ -30,5 +30,24 @@ namespace FitnessClub
             winMain.Show();
             this.Close();
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            //clear all users inputs
+            txtLastName.Text = "";
+            txtEmail.Text = "";
+            txtPhoneNum.Text = "";
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            //validate users at least input one field
+            if (txtLastName.Text == "" && txtEmail.Text == "" && txtPhoneNum.Text == "")
+            {
+                MessageBox.Show("You must fill out at least one search field.");
+            }
+            
+        }
+
     }
 }
