@@ -33,8 +33,7 @@
             <ComboBoxItem Content="Family 12 Month "/>
         </ComboBox>
         <Label x:Name="lblCurrentStatus" Content="Current Status" HorizontalAlignment="Left" Margin="32,110,0,0" VerticalAlignment="Top" Grid.Row="1" Height="46" Width="175" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="3"/>
-        <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="32,149,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="57" RenderTransformOrigin="0.358,0.577" TabIndex="4" FontSize="17.333"/>
-        <Label x:Name="lblPriceResult" Content="$9.99" HorizontalAlignment="Left" Margin="175,149,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
+        <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="32,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="75" RenderTransformOrigin="0.358,0.577" TabIndex="4" FontSize="17.333"/>
         <Label x:Name="lblAvailablity" Content="Availability:" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
         <Label x:Name="lblAvailabilityResult" Content="Available" HorizontalAlignment="Left" Margin="175,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
         <Label x:Name="lblPriceTo" Content="Change Price To:" HorizontalAlignment="Left" Margin="32,297,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="143" TabIndex="7" FontSize="17.333"/>
@@ -46,6 +45,7 @@
         <CheckBox x:Name="chbNo" Content="No" HorizontalAlignment="Left" Margin="296,354,0,0" Grid.Row="1" VerticalAlignment="Top" Height="21" Width="49" TabIndex="9" FontSize="17.333" IsChecked="True"/>
         <Label x:Name="lblChange" Content="Make Changes Here" HorizontalAlignment="Left" Margin="32,247,0,0" VerticalAlignment="Top" Grid.Row="1" Height="45" Width="285" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="6"/>
         <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="15" Click="btnBack_Click"/>
+        <Label x:Name="lblPriceResult" Content="" HorizontalAlignment="Left" Margin="175,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
 
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,9 +19,14 @@ namespace FitnessClub
     /// </summary>
     public partial class PriceManagement : Window
     {
+        List<Pricing> pricingList;
         public PriceManagement()
         {
             InitializeComponent();
+
+            pricingList = new List<Pricing>();
+
+            ImportPricingData();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -30,5 +35,23 @@ namespace FitnessClub
             winMain.Show();
             this.Close();
         }
+        
+        private void ImportPricingData()
+        {
+            string strFilePath = @"..\..\..\Data\Pricing.json";
+
+         
+            string jsonData = File.ReadAllText(strFilePath);
+            pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
+            
+            
+
+
+            lblPriceResult.Content = pricingList["Type"];
+
+
+
+        }
+
     }
 }
