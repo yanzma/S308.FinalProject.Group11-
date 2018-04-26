@@ -1,0 +1,51 @@
+﻿<Window x:Name="PricingManagement_" x:Class="FitnessClub.PriceManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub"
+        mc:Ignorable="d"
+        Title="Pricing Management" Height="640" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD6D6D6" Offset="0"/>
+            <GradientStop Color="#FF998181" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid HorizontalAlignment="Left" Width="800" Margin="0,0,-8,-3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="201*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="175*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblSelectType" Content="Select a Membership Type " HorizontalAlignment="Left" Margin="27,22,0,0" VerticalAlignment="Top" Grid.Row="1" Height="34" Width="300" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="1"/>
+        <Label x:Name="lblPriceInfo" Content="Pricing Management" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Height="55" Width="800" FontWeight="Bold" FontSize="37.333" Foreground="Black" TabIndex="0" Grid.ColumnSpan="2" FontFamily="Century Schoolbook" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblPriceInstruction" Content="Guidance: &#xA;- Select the membership type to check the &#xD;&#xA;current  information &#xA;- If you want to make any changes about &#xD;&#xA;that membership type, modify the information&#xD;&#xA;in the &quot;Make Changes Here&quot; section" Margin="0,121,-20,0" VerticalAlignment="Top" Height="254" FontSize="18.667" Foreground="Black" Grid.Row="1" BorderBrush="#FFF9F7F1" TabIndex="14" Background="{x:Null}" FontStyle="Italic" Grid.Column="1"/>
+        <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="267" Grid.Row="1" Height="25" TabIndex="2" FontSize="17.333">
+            <ComboBoxItem Content="Individual 1 Month" IsSelected="True" TabIndex="0"/>
+            <ComboBoxItem Content="Individual 12 Month " TabIndex="1"/>
+            <ComboBoxItem Content="Two Person 1 Month " TabIndex="2"/>
+            <ComboBoxItem Content="Two Person 12 Month "/>
+            <ComboBoxItem Content="Family 1 Month "/>
+            <ComboBoxItem Content="Family 12 Month "/>
+        </ComboBox>
+        <Label x:Name="lblCurrentStatus" Content="Current Status" HorizontalAlignment="Left" Margin="32,110,0,0" VerticalAlignment="Top" Grid.Row="1" Height="46" Width="175" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="3"/>
+        <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="32,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="75" RenderTransformOrigin="0.358,0.577" TabIndex="4" FontSize="17.333"/>
+        <Label x:Name="lblAvailablity" Content="Available?" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
+        <Label x:Name="lblAvailabilityResult" Content="Available" HorizontalAlignment="Left" Margin="175,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
+        <Label x:Name="lblPriceTo" Content="Change Price To:" HorizontalAlignment="Left" Margin="32,297,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="143" TabIndex="7" FontSize="17.333"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="224,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold"/>
+        <Label x:Name="lblMembershipTypeAvailability" Content="Type Available?" HorizontalAlignment="Left" Margin="32,346,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="143" TabIndex="9" FontSize="17.333"/>
+        <TextBox x:Name="txtPriceChange" HorizontalAlignment="Left" Height="26" Margin="198,300,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" TabIndex="8" FontSize="17.333" Text="11.99"/>
+        <CheckBox x:Name="chbYes" Content="Yes" HorizontalAlignment="Left" Margin="198,352,0,0" Grid.Row="1" VerticalAlignment="Top" Height="21" Width="49" TabIndex="10" FontSize="17.333"/>
+        <CheckBox x:Name="chbNo" Content="No" HorizontalAlignment="Left" Margin="296,354,0,0" Grid.Row="1" VerticalAlignment="Top" Height="21" Width="49" TabIndex="9" FontSize="17.333" IsChecked="True"/>
+        <Label x:Name="lblChange" Content="Make Changes Here" HorizontalAlignment="Left" Margin="32,247,0,0" VerticalAlignment="Top" Grid.Row="1" Height="45" Width="285" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="6"/>
+        <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="15" Click="btnBack_Click"/>
+        <Label x:Name="lblPriceResult" Content="" HorizontalAlignment="Left" Margin="175,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
+
+    </Grid>
+</Window>
