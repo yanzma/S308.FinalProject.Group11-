@@ -19,7 +19,13 @@ namespace FitnessClub
             Availability = "";
         }
 
-
+        public Pricing (string type, string price, string availability)
+        {
+            Type = type;
+            Price = price;
+            Availability = availability;
+        }
+    
 
 
     }
