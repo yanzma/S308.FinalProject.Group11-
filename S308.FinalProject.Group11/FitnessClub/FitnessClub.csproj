@@ -114,7 +114,7 @@
     </EmbeddedResource>
     <None Include="Membership.json" />
     <None Include="packages.config" />
-    <None Include="Pricing.json" />
+    <None Include="Data\Pricing.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
