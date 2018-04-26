@@ -25,16 +25,16 @@
         <Label x:Name="lblPriceInfo" Content="Pricing Management" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Height="55" Width="800" FontWeight="Bold" FontSize="37.333" Foreground="Black" TabIndex="0" Grid.ColumnSpan="2" FontFamily="Century Schoolbook" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblPriceInstruction" Content="Guidance: &#xA;- Select the membership type to check the &#xD;&#xA;current  information &#xA;- If you want to make any changes about &#xD;&#xA;that membership type, modify the information&#xD;&#xA;in the &quot;Make Changes Here&quot; section" Margin="0,121,-20,0" VerticalAlignment="Top" Height="254" FontSize="18.667" Foreground="Black" Grid.Row="1" BorderBrush="#FFF9F7F1" TabIndex="14" Background="{x:Null}" FontStyle="Italic" Grid.Column="1"/>
         <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="267" Grid.Row="1" Height="25" TabIndex="2" FontSize="17.333">
-            <ComboBoxItem Content="Individual 1 Month" IsSelected="True"/>
-            <ComboBoxItem Content="Individual 12 Month "/>
-            <ComboBoxItem Content="Two Person 1 Month "/>
+            <ComboBoxItem Content="Individual 1 Month" IsSelected="True" TabIndex="0"/>
+            <ComboBoxItem Content="Individual 12 Month " TabIndex="1"/>
+            <ComboBoxItem Content="Two Person 1 Month " TabIndex="2"/>
             <ComboBoxItem Content="Two Person 12 Month "/>
             <ComboBoxItem Content="Family 1 Month "/>
             <ComboBoxItem Content="Family 12 Month "/>
         </ComboBox>
         <Label x:Name="lblCurrentStatus" Content="Current Status" HorizontalAlignment="Left" Margin="32,110,0,0" VerticalAlignment="Top" Grid.Row="1" Height="46" Width="175" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="3"/>
         <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="32,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="75" RenderTransformOrigin="0.358,0.577" TabIndex="4" FontSize="17.333"/>
-        <Label x:Name="lblAvailablity" Content="Availability:" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
+        <Label x:Name="lblAvailablity" Content="Available?" HorizontalAlignment="Left" Margin="32,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="110" TabIndex="5" FontSize="17.333"/>
         <Label x:Name="lblAvailabilityResult" Content="Available" HorizontalAlignment="Left" Margin="175,195,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="152" FontSize="17.333"/>
         <Label x:Name="lblPriceTo" Content="Change Price To:" HorizontalAlignment="Left" Margin="32,297,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="143" TabIndex="7" FontSize="17.333"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="56,412,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="44" TabIndex="12" FontSize="18.667" FontWeight="Bold"/>
