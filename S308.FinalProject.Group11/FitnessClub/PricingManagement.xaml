@@ -24,8 +24,8 @@
         <Label x:Name="lblSelectType" Content="Select a Membership Type " HorizontalAlignment="Left" Margin="27,22,0,0" VerticalAlignment="Top" Grid.Row="1" Height="34" Width="300" FontWeight="Bold" FontSize="18.667" Foreground="Black" TabIndex="1"/>
         <Label x:Name="lblPriceInfo" Content="Pricing Management" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Height="55" Width="800" FontWeight="Bold" FontSize="37.333" Foreground="Black" TabIndex="0" Grid.ColumnSpan="2" FontFamily="Century Schoolbook" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblPriceInstruction" Content="Guidance: &#xA;- Select the membership type to check the &#xD;&#xA;current  information &#xA;- If you want to make any changes about &#xD;&#xA;that membership type, modify the information&#xD;&#xA;in the &quot;Make Changes Here&quot; section" Margin="0,121,-20,0" VerticalAlignment="Top" Height="254" FontSize="18.667" Foreground="Black" Grid.Row="1" BorderBrush="#FFF9F7F1" TabIndex="14" Background="{x:Null}" FontStyle="Italic" Grid.Column="1"/>
-        <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="267" Grid.Row="1" Height="25" TabIndex="2" FontSize="17.333">
-            <ComboBoxItem Content="Individual 1 Month" IsSelected="True" TabIndex="0"/>
+        <ComboBox x:Name="cboSelectType" HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="267" Grid.Row="1" Height="25" TabIndex="2" FontSize="17.333" SelectionChanged="cboSelectType_SelectionChanged">
+            <ComboBoxItem Content="Individual 1 Month" TabIndex="0"/>
             <ComboBoxItem Content="Individual 12 Month " TabIndex="1"/>
             <ComboBoxItem Content="Two Person 1 Month " TabIndex="2"/>
             <ComboBoxItem Content="Two Person 12 Month "/>
