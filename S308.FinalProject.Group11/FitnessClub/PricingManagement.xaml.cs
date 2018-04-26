@@ -45,37 +45,18 @@ namespace FitnessClub
             pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
 
             //get combo box selected item index
-            //String[] option = new String[6] { "Individual 1 Month", "Individual 12 Month", "Two Person 1 Month", "Two Person 12 Month", "Family 1 Month", "Family 12 Month" };
-            //ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
-            //string strSelectedName = selectedItem.Content.ToString();
-            //int i = Array.IndexOf(option,strSelectedName);
-           // Pricing item = pricingList[i];
+            String[] option = new String[6] { "Individual 1 Month", "Individual 12 Month", "Two Person 1 Month", "Two Person 12 Month", "Family 1 Month", "Family 12 Month" };
+            ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
+            int i = Array.IndexOf(option, );
+            Pricing item = pricingList[i];
 
             //get corresponded item price and avaliability
-            //lblPriceResult.Content = strSelectedName;
-            //lblAvailabilityResult.Content = item.Availability;
+            lblPriceResult.Content = item.Price;
+            lblAvailabilityResult.Content = item.Availability;
             
 
 
         }
 
-        private void cboSelectType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cboSelectType.SelectedIndex != -1)
-            {
-                
-
-                //get combo box selected item index
-                String[] option = new String[6] { "Individual 1 Month", "Individual 12 Month", "Two Person 1 Month", "Two Person 12 Month", "Family 1 Month", "Family 12 Month" };
-                ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
-                string strSelectedName = selectedItem.Content.ToString();
-                int i = Array.IndexOf(option, strSelectedName);
-                //Pricing item = pricingList[i];
-
-                //get corresponded item price and avaliability
-                lblPriceResult.Content = i.ToString();
-                //lblAvailabilityResult.Content = item.Availability;
-            }
-        }
     }
 }
