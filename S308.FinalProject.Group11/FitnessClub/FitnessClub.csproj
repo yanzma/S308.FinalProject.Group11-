@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Membership.cs" />
     <Compile Include="MembershipSales.xaml.cs">
       <DependentUpon>MembershipSales.xaml</DependentUpon>
     </Compile>
@@ -111,6 +112,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Membership.json" />
     <None Include="packages.config" />
     <None Include="Pricing.json" />
     <None Include="Properties\Settings.settings">
