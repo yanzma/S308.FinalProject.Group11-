@@ -70,7 +70,7 @@ namespace FitnessClub
                 //get combo box selected item index
 
                 ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
-                string strSelectedName = selectedItem.Content.ToString();
+                string strSelectedName = selectedItem.Content.ToString().Trim();
                
                 //get corresponded item price and avaliability
                 foreach (Pricing item in pricingList)
@@ -98,24 +98,56 @@ namespace FitnessClub
             { MessageBox.Show("Please enter either Yes or No!"); }
 
             //update json file 
-       
+
             string strFilePath = @"..\..\..\Data\Pricing.json";
 
-            string jsonData = File.ReadAllText(strFilePath);
-            pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
+           
+
+           // recreate the list 
+
+
+
+            //Pricing Individual1MonthUpdate = new Pricing("Individual 1 Month", txtPriceChange.Text, txtAvailabilityChange.Text);
+            //pricingList.Remove(Individual1MonthUpdate);
+
+            // Pricing Individual12MonthUpdate = new Pricing("Individual 12 Month", txtPriceChange.Text, txtAvailabilityChange.Text);
+            //pricingList.Add(Individual12MonthUpdate);
+
+            //Pricing 
+
+
+            ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
+            string strSelectedName = selectedItem.Content.ToString().Trim();
 
             foreach (Pricing item in pricingList)
             {
-                if (txtPriceChange.Text != lblPriceResult.Content.ToString()) 
-                {
-                    item.Price = txtPriceChange.Text;               
-                }
-                if (lblAvailabilityResult.Content.ToString() != txtAvailabilityChange.Text)
-                {
-                    item.Availability = txtAvailabilityChange.Text;
-                } 
+                //if (txtPriceChange.Text != lblPriceResult.Content.ToString() || lblAvailabilityResult.Content.ToString() != txtAvailabilityChange.Text) 
+                //{
+                //    pricingList.Remove(item);
+                //    Pricing newinfo = new Pricing(strSelectedName, txtPriceChange.Text, txtAvailabilityChange.Text);
+                //    pricingList.Add(newinfo);
+
+                //    string jsonData1 = JsonConvert.SerializeObject(pricingList);
+                //    System.IO.File.
+                  
+                //}
+                if(txtPriceChange.Text != "")
+                { 
+
+                    if (item.Type == strSelectedName)
                 
+                    item.Price = txtPriceChange.Text;
+
+                    
+                }
+                if (txtAvailabilityChange.Text != "")
+                {
+                    if (item.Type == strSelectedName)
+                        item.Availability = txtAvailabilityChange.Text;
+                }              
             }
+            string jsonData = JsonConvert.SerializeObject(pricingList);
+            System.IO.File.WriteAllText(strFilePath, jsonData);
         }
         // clear results
         private void btnClear_Click(object sender, RoutedEventArgs e)

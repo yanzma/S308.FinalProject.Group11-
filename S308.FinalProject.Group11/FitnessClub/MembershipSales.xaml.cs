@@ -120,30 +120,23 @@ namespace FitnessClub
                 intLength = 12;
             }
             datEndDate = datTime1.AddMonths(intLength);
-            string strPreview = "Membership Type: Individual 1 Month " + Environment.NewLine
-                + "Start Date: 6/3/2018" + Environment.NewLine
-                + "End Date: 7/3/2018" + Environment.NewLine
-                + "Cost/Month: $9.99" + Environment.NewLine
-                + "Subtotal: $9.99" + Environment.NewLine
-                + Environment.NewLine
-                + "Additional Features:" + Environment.NewLine
-                + Environment.NewLine
-                + "Total: $9.99";
-
-
+            string strPreview = "Membership Type: " + selectedType.Content + Environment.NewLine
+                + "Start Date: " + datStartDate + Environment.NewLine
+                + "End Date: "+ datEndDate + Environment.NewLine
+                + 
 
 
         }
 
         private void ImportPricingData()
         {
-            string strFilePath = @"..\..\..\Data\Pricing.json";
+            string strFilePath = @"..\..\..\..\Pricing.json";
 
 
-            string jsonData = File.ReadAllText(strFilePath);
-            pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
+           // string jsonData = File.ReadAllText(strFilePath);
+           // pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
 
-        }
+       // }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
