@@ -15,6 +15,7 @@ namespace FitnessClub
         public string Weight { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }
+        public string Phonenum { get; set; }
         public string MembershipType { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
@@ -31,6 +32,7 @@ namespace FitnessClub
             Weight = "";
             Gender = "";
             Email = "";
+            Phonenum = "";
             MembershipType = "";
             StartDate = "";
             EndDate = "";
