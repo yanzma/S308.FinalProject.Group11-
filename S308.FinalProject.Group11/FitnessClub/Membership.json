@@ -1,5 +1,13 @@
 [{
   "First Name": "Alice",
+  "“Last Name": "Smith",
+  "Age": "35",
+  "Weight": "135 lbs",
+  "Gender": "Female",
+  "Email": "AliceWSmith@gmail.com",
+  "Phonenum": "8123498133",
+  "MembershipType": ""
 	"Price": "$9.99",
-	"Availability": "Yes"
+  "Availability": "Yes"?
+
 }]

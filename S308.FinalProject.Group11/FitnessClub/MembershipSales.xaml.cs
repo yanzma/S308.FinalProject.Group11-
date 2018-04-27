@@ -199,6 +199,16 @@ namespace FitnessClub
             }
 
             List<Membership> MembershipList;
+            string strFinalWindow = 
+                "First Name: " + txtFirstName.Text.ToString() + Environment.NewLine
+                +"Last Name: "+ txtLastName.Text.ToString()+Environment.NewLine
+                +"Age: "+txtAge.Text.ToString()+Environment.NewLine
+                +"Weight: "+ txtWeight.Text.ToString()+ Environment.NewLine
+                +"Gener: "+ cboGender.SelectedItem.ToString()+Environment.NewLine
+                +"CreditCard Type: " + cboCardType.SelectedItem.ToString()+ Environment.NewLine
+                +"CreditCard Number: "+ txtCardNum.Text.ToString()+Environment.NewLine
+                +"Email: "+txtEmail.Text.ToString()+Environment.NewLine
+                +"Phone Num: "+ txtPhoneNumber.Text
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
