@@ -19,20 +19,22 @@ namespace FitnessClub
     /// </summary>
     public partial class PriceManagement : Window
     {
+        //creating a list of pricing 
         List<Pricing> pricingList;
         public PriceManagement()
         {
        
             InitializeComponent();
-
+            //Initialize the list of customers
             pricingList = new List<Pricing>();
-
+            //call method for importing pricing data
             ImportPricingData();
 
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            //go back to main window 
             Window winMain = new MainMenu();
             winMain.Show();
             this.Close();
@@ -42,20 +44,18 @@ namespace FitnessClub
         {
             string strFilePath = @"..\..\..\Data\Pricing.json";
 
+            try { 
+                //use System.IO.File to read the entire data file
+                string jsonData = File.ReadAllText(strFilePath);
+                
+                //serialize the json data to a list of pricing 
+                pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
+            }
 
-            string jsonData = File.ReadAllText(strFilePath);
-            pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
-
-            //get combo box selected item index
-            //String[] option = new String[6] { "Individual 1 Month", "Individual 12 Month", "Two Person 1 Month", "Two Person 12 Month", "Family 1 Month", "Family 12 Month" };
-            //ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
-            //string strSelectedName = selectedItem.Content.ToString();
-            //int i = Array.IndexOf(option,strSelectedName);
-            // Pricing item = pricingList[i];
-
-            //get corresponded item price and avaliability
-            //lblPriceResult.Content = strSelectedName;
-            //lblAvailabilityResult.Content = item.Availability;
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
 
 
 
@@ -63,11 +63,12 @@ namespace FitnessClub
 
         private void cboSelectType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Extract desired json file data 
+
             if (cboSelectType.SelectedIndex != -1)
             {
 
-
-                //get combo box selected item index
+                //get combo box selected item content
 
                 ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
                 string strSelectedName = selectedItem.Content.ToString().Trim();
@@ -82,76 +83,81 @@ namespace FitnessClub
                         lblAvailabilityResult.Content = item.Availability;
                     }
                 }
-
-
             }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            //declare variables
+
+            double dblNum;
+
             //validate input fields 
-            int intNum;
-            if (!Int32.TryParse(txtPriceChange.Text, out intNum))
-            { MessageBox.Show("Please enter a valid number!"); }
 
-            if (txtAvailabilityChange.Text != "Yes" && txtAvailabilityChange.Text != "No")
-            { MessageBox.Show("Please enter either Yes or No!"); }
+            if (txtPriceChange.Text != "")
+            {
+                if (!Double.TryParse(txtPriceChange.Text, out dblNum))
+                {
+                    MessageBox.Show("Please enter a valid number!");
+                    return;
+                }
+            }
+            if (txtAvailabilityChange.Text != "")
+            {
+                if (txtAvailabilityChange.Text.ToLower() != "yes" && txtAvailabilityChange.Text.ToLower() != "no")
+                {
+                    MessageBox.Show("Please enter either Yes or No!");
+                    return;
+                }
+            }
 
-            //update json file 
 
-            string strFilePath = @"..\..\..\Data\Pricing.json";
+            UpdateJsonFile();
+        }
 
-           
-
-           // recreate the list 
-
-
-
-            //Pricing Individual1MonthUpdate = new Pricing("Individual 1 Month", txtPriceChange.Text, txtAvailabilityChange.Text);
-            //pricingList.Remove(Individual1MonthUpdate);
-
-            // Pricing Individual12MonthUpdate = new Pricing("Individual 12 Month", txtPriceChange.Text, txtAvailabilityChange.Text);
-            //pricingList.Add(Individual12MonthUpdate);
-
-            //Pricing 
-
+        private void UpdateJsonFile()
+        {
+            //get combo box select item content
 
             ComboBoxItem selectedItem = (ComboBoxItem)cboSelectType.SelectedItem;
             string strSelectedName = selectedItem.Content.ToString().Trim();
+      
+            //update json file 
 
             foreach (Pricing item in pricingList)
             {
-                //if (txtPriceChange.Text != lblPriceResult.Content.ToString() || lblAvailabilityResult.Content.ToString() != txtAvailabilityChange.Text) 
-                //{
-                //    pricingList.Remove(item);
-                //    Pricing newinfo = new Pricing(strSelectedName, txtPriceChange.Text, txtAvailabilityChange.Text);
-                //    pricingList.Add(newinfo);
-
-                //    string jsonData1 = JsonConvert.SerializeObject(pricingList);
-                //    System.IO.File.
-                  
-                //}
                 if(txtPriceChange.Text != "")
-                { 
-
-                    if (item.Type == strSelectedName)
-                
-                    item.Price = txtPriceChange.Text;
-
+                {
+               if (item.Type == strSelectedName)
+                   item.Price = txtPriceChange.Text;
+                    item.Price.ToString("C2");
                     
                 }
+
                 if (txtAvailabilityChange.Text != "")
-                {
-                    if (item.Type == strSelectedName)
-                        item.Availability = txtAvailabilityChange.Text;
-                }              
+                { 
+                if (item.Type == strSelectedName)
+                    item.Availability = txtAvailabilityChange.Text.ToUpper();
+                }
             }
-            string jsonData = JsonConvert.SerializeObject(pricingList);
-            System.IO.File.WriteAllText(strFilePath, jsonData);
+            //write new information into jason file 
+            string strFilePath = @"..\..\..\Data\Pricing.json";
+            try
+            {
+            //serialize the new list of pricing to json format
+                string jsonData = JsonConvert.SerializeObject(pricingList);
+            //use System.IO.File to write over the file with the json data 
+                System.IO.File.WriteAllText(strFilePath,jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export processs: " + ex.Message);
+            }
         }
-        // clear results
+       
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            // clear results
             txtAvailabilityChange.Text = "";
             txtPriceChange.Text = "";
             cboSelectType.SelectedIndex = -1;
