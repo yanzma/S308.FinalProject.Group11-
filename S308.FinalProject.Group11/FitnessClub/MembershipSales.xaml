@@ -58,9 +58,7 @@
         <TextBox x:Name="txtPhoneNumber" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="190,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" TabIndex="17" FontSize="17.333" Text="8121111111"/>
         <TextBox x:Name="txtEmail" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="190,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" TabIndex="19" FontSize="17.333" Text="abcde@gmail.com"/>
         <Label x:Name="lblMembershipSalesTitle" Content="Membership Sales" HorizontalAlignment="Left" Height="55" Margin="0,25,0,0" VerticalAlignment="Top" Width="792" TabIndex="0" FontSize="37.333" FontWeight="Bold" Grid.ColumnSpan="2" FontFamily="Century Schoolbook" HorizontalContentAlignment="Center"/>
-        <CheckBox x:Name="chbYes" Content="Yes" HorizontalAlignment="Left" Height="20" Margin="199,275,0,0" VerticalAlignment="Top" Width="48" FontSize="17.333"/>
-        <CheckBox x:Name="chbNo" Content="No" HorizontalAlignment="Left" Height="20" Margin="262,277,0,0" VerticalAlignment="Top" Width="49" FontSize="17.333"/>
-        <Button x:Name="btnSubmitInput" Content="Submit" HorizontalAlignment="Left" Height="28" Margin="262,318,0,0" VerticalAlignment="Top" Width="99" TabIndex="8" FontSize="18.667" FontWeight="Bold" Click="btnSubmitInput_Click"/>
+        <Button x:Name="btnSubmitInput" Content="Submit" HorizontalAlignment="Left" Height="28" Margin="297,317,0,0" VerticalAlignment="Top" Width="99" TabIndex="8" FontSize="18.667" FontWeight="Bold" Click="btnSubmitInput_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="30" Click="btnBack_Click"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="216,545,0,0" VerticalAlignment="Top" Width="119" Height="44" TabIndex="29" FontSize="18.667" FontWeight="Bold" Grid.Column="1" Click="btnSave_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="58,545,0,0" VerticalAlignment="Top" Width="119" Height="44" TabIndex="28" FontSize="18.667" FontWeight="Bold" Grid.Column="1" Click="btnClear_Click"/>
@@ -73,12 +71,26 @@
         </ComboBox>
         <Label x:Name="lblPersonalTraining" Content="Personal Training?" HorizontalAlignment="Left" Height="31" Margin="41,269,0,0" VerticalAlignment="Top" Width="153" TabIndex="5" FontSize="16"/>
         <Label x:Name="lblLocker" Content="Locker Rental?" HorizontalAlignment="Left" Height="31" Margin="41,295,0,0" VerticalAlignment="Top" Width="153" TabIndex="5" FontSize="16"/>
-        <CheckBox x:Name="chbYes_2" Content="Yes" HorizontalAlignment="Left" Height="20" Margin="199,299,0,0" VerticalAlignment="Top" Width="48" FontSize="17.333"/>
-        <CheckBox x:Name="chbNo_2" Content="No" HorizontalAlignment="Left" Height="20" Margin="262,299,0,0" VerticalAlignment="Top" Width="49" FontSize="17.333"/>
         <Label x:Name="lblTimeLength" Content="Length:" HorizontalAlignment="Left" Height="34" Margin="240,177,0,0" VerticalAlignment="Top" Width="161" TabIndex="3" FontSize="17.333" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cboLength" HorizontalAlignment="Left" Height="26" Margin="232,213,0,0" VerticalAlignment="Top" Width="149" TabIndex="2" FontSize="17.333">
             <ComboBoxItem Content="1 Month" IsSelected="True"/>
             <ComboBoxItem Content="12 Month"/>
+        </ComboBox>
+        <ComboBox x:Name="cboPersonalTraining" HorizontalAlignment="Left" Height="26" Margin="199,274,0,0" VerticalAlignment="Top" Width="63">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Height="26" Margin="200,305,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.5,0.5">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-2.092"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
         </ComboBox>
     </Grid>
 </Window>

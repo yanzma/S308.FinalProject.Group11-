@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+
+
 
 namespace FitnessClub
 {
@@ -19,9 +23,11 @@ namespace FitnessClub
     /// </summary>
     public partial class MemberInfo : Window
     {
+        List<Membership> MembershipList;
         public MemberInfo()
         {
             InitializeComponent();
+            ImportMembershipData();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -46,7 +52,49 @@ namespace FitnessClub
             {
                 MessageBox.Show("You must fill out at least one search field.");
             }
-            
+            if (txtLastName.Text != "")
+            {
+                foreach (Membership item in MembershipList)
+                {
+                    if (item.Lastname != txtLastName.Text)
+                    {
+                        MembershipList.Remove(item);
+                    }
+                }
+            }
+
+            if (txtEmail.Text != "")
+            {
+                foreach (Membership item in MembershipList)
+                {
+                    if (item.Email != txtEmail.Text)
+                    {
+                        MembershipList.Remove(item);
+                    }
+                }
+            }
+
+            if (txtPhoneNum.Text != "")
+            {
+                foreach (Membership item in MembershipList)
+                {
+                    if (item.Phonenum != txtPhoneNum.Text)
+                    {
+                        MembershipList.Remove(item);
+                    }
+                }
+            }
+        }
+
+        //read membership jason file
+        private void ImportMembershipData()
+        {
+            string strFilePath = @"..\..\..\Membership.json";
+
+
+            string jsonData = File.ReadAllText(strFilePath);
+            MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
+
         }
 
     }

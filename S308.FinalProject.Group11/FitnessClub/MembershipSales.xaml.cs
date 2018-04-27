@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,11 @@ namespace FitnessClub
 
         private void btnSubmitInput_Click(object sender, RoutedEventArgs e)
         {
+            //Initiate variable 
+            double dblSubtotal = 0;
+
             //Validate that member type is selected
-            if (cblMembershipType.SelectedIndex == 0)
+            if (cblMembershipType.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a membership type.");
                 return;
@@ -54,13 +58,35 @@ namespace FitnessClub
                 MessageBox.Show("Please select a valid date.");
                 return;
             }
-            //Validate that at least check 1 checkbox for additional features
+            //Tab order for training and locker combo boxes
+            //Validate whether or not to choose the additional features
+            //If chosen, add the amount back to the subtotal
+            if (cboPersonalTraining.SelectedIndex == -1)
+            {
+                MessageBox.Show("At least select one option.");
+                return;
+            }
+            if (cboLocker.SelectedIndex == -1)
+            {
+                MessageBox.Show("At least select one option.");
+                return;
+            }
+            ComboBoxItem selectedTraining = (ComboBoxItem)cboPersonalTraining.SelectedItem;
+            ComboBoxItem selectedLocker = (ComboBoxItem)cboLocker.SelectedItem;
+            if (selectedTraining.Content.Equals("Yes"))
+            {
+                dblSubtotal += 5;
+            }
+            if(selectedLocker.Content.Equals("Yes"))
+            {
+                dblSubtotal += 1;
+            }
+
 
             //Clear outputs from previous 
             txtPreviewWindow.Text = "";
 
-            //Validation:
-            //1 Should be one checkbox selected
+
 
             //Calculate
             //1. Based on type and start date, get end date
@@ -72,8 +98,19 @@ namespace FitnessClub
             int intLength;
             ComboBoxItem selectedType = (ComboBoxItem)cblMembershipType.SelectedItem;
             ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
+            if (selectedType.Content.("Individual 1 Month" "Two Person 1 Month""Family 1 Month"))
+            {
+                dblSubtotal += 1;
+            }
             //read price from combo
-
+            string strSubtotal;
+            foreach (Pricing item in pricingList)
+            {
+                if (item.Type.Equals(selectedType))
+                    strSubtotal = item.Price;
+            }
+            //double dblSubtotal = Convert.ToDouble(strSubtotal.Substring(1));
+            //double  .Parse(strSubtotal,NumberStyles.Currency) *= intLength;
             if(selectedLength.Content.ToString()=="1 Month")
             {
                intLength = 1;
@@ -83,16 +120,24 @@ namespace FitnessClub
                 intLength = 12;
             }
             datEndDate = datTime1.AddMonths(intLength);
-            string strPreview = "Membership Type: " + selectedType.Content + Environment.NewLine
-                + "Start Date: " + datStartDate + Environment.NewLine
-                + "End Date: "+ datEndDate + Environment.NewLine
-                + 
+            string strPreview = "Membership Type: Individual 1 Month " + Environment.NewLine
+                + "Start Date: 6/3/2018" + Environment.NewLine
+                + "End Date: 7/3/2018" + Environment.NewLine
+                + "Cost/Month: $9.99" + Environment.NewLine
+                + "Subtotal: $9.99" + Environment.NewLine
+                + Environment.NewLine
+                + "Additional Features:" + Environment.NewLine
+                + Environment.NewLine
+                + "Total: $9.99";
+
+
+
 
         }
 
         private void ImportPricingData()
         {
-            string strFilePath = @"..\..\..\..\Pricing.json";
+            string strFilePath = @"..\..\..\Data\Pricing.json";
 
 
             string jsonData = File.ReadAllText(strFilePath);
