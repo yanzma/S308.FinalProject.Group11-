@@ -67,7 +67,7 @@ namespace FitnessClub
         //read membership jason file
         private void ImportMembershipData()
         {
-            string strFilePath = @"..\..\Data\Membership.json";
+            string strFilePath = @"..\..\..\Data\Membership.json";
 
 
             string jsonData = File.ReadAllText(strFilePath);
@@ -75,5 +75,14 @@ namespace FitnessClub
 
         }
 
+        private void btnClear_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

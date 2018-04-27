@@ -16,12 +16,12 @@
         <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="91,114,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="1"/>
         <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Margin="432,114,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="5"/>
         <Label x:Name="lbPhoneNum" Content="Phone Number:" HorizontalAlignment="Left" Margin="91,154,0,0" VerticalAlignment="Top" FontSize="17.333" TabIndex="3"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="232,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" Text="Smith" TabIndex="2"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="232,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" TabIndex="2"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="503,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" TabIndex="6"/>
         <TextBox x:Name="txtPhoneNum" HorizontalAlignment="Left" Height="30" Margin="232,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="17.333" TabIndex="4"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="616,184,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" TabIndex="7" FontWeight="Bold"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="616,184,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" TabIndex="7" FontWeight="Bold" Click="btnSearch_Click"/>
         <Label x:Name="lblTitle" VerticalAlignment="Top" Width="792" Height="55" FontSize="37.333" TabIndex="0" FontWeight="Bold" Margin="0,25,0,0" Content="Member Information" Background="{x:Null}" Foreground="Black" FontFamily="Century Schoolbook" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="456,184,0,0" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="456,184,0,0" VerticalAlignment="Top" Width="119" Height="44" TabIndex="13" FontSize="18.667" FontWeight="Bold" Click="btnClear_Click"/>
         <Button x:Name="btnBack" Content="&lt;&lt; Back" HorizontalAlignment="Left" Margin="22,31,0,0" VerticalAlignment="Top" Width="119" Height="44" FontSize="18.667" FontWeight="Bold" Background="#7FFFFFFF" BorderBrush="#FF998181" TabIndex="9" Click="btnBack_Click"/>
         <DataGrid x:Name="dtgSearchResult" HorizontalAlignment="Left" Height="309" Margin="60,257,0,0" VerticalAlignment="Top" Width="656"/>
 

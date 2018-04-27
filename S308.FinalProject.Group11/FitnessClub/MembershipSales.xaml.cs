@@ -179,6 +179,7 @@ namespace FitnessClub
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             
+            //get membership type length
             int intLength;
             ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
             DateTime? datStartDate = dtpStartDate.SelectedDate;
@@ -205,7 +206,7 @@ namespace FitnessClub
                 return;
             }
 
-            if (cboCardType.SelectedIndex == 0)
+            if (cboCardType.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a card type.");
                 return;
@@ -225,7 +226,7 @@ namespace FitnessClub
                 MessageBox.Show("Please enter an email address.");
                 return;
             }
-            if (cboGender.SelectedIndex == 0)
+            if (cboGender.SelectedIndex == -1)
             {
                 MessageBox.Show("This is a required field.");
                 return;
@@ -272,17 +273,81 @@ namespace FitnessClub
             Membership newMember = new Membership();
             ComboBoxItem personaltraining = (ComboBoxItem)cboPersonalTraining.SelectedItem;
             ComboBoxItem locker = (ComboBoxItem)cboLocker.SelectedItem;
+            //format gender
+            string strGender;
+            if (cboGender.SelectedItem.ToString() == "Male")
+            {
+                strGender = "Male";
+            }
+            else if (cboGender.SelectedItem.ToString() == "Female")
+            {
+                strGender = "Female";
+            }
+            else
+            {
+                strGender = "Not Provided";
+            }
+            //Format Creditcard Type
+            string strCardtype;
+            if(cboCardType.SelectedItem.ToString()=="MasterCard")
+            {
+                strCardtype = "MasterCard";
+            }
+            else if (cboCardType.SelectedItem.ToString() == "Visa")
+                {
+                strCardtype = "Visa";
+            }
+            else
+            { strCardtype = "Discover"; }
+
+            //Formatting Traning Goal
+            string strGoal;
+            if (cboPersonalTraining.SelectedItem.ToString()=="Athletic Performance")
+            {
+                strGoal = "Athletic Performance";
+            }
+            else if (cboPersonalTraining.SelectedItem.ToString() == "Overall Health")
+            {
+                strGoal = "Overall Health";
+            }
+            else if(cboPersonalTraining.SelectedItem.ToString() == "Weight Management")
+            {
+                strGoal = "Weight Management";
+            }
+            else
+            {
+                strGoal = "Strength Training Weight Loss";
+            }
+
+            //Formatting Membership Type
+            string strType;
+            if(cblMembershipType.SelectedItem.ToString()=="Individual 1 Month")
+            {
+                strType = "Individual 1 Month";
+            }
+        else if (cblMembershipType.SelectedItem.ToString() == "Individual 12 Month")
+            { strType = "Individual 12 Month"; }
+            else if (cblMembershipType.SelectedItem.ToString() == "Two Person 1 Month")
+            { strType = "Two Person 1 Month"; }
+            else if (cblMembershipType.SelectedItem.ToString() == "Two Person 12 Month")
+            { strType = "Two Person 12 Month"; }
+            else if (cblMembershipType.SelectedItem.ToString() == "Family 1 Month")
+            { strType = "Family 1 Month"; }
+            else
+            { strType = "Family 12 Month"; }
+
+            //assign values to new newMember
             newMember.Firstname = txtFirstName.Text;
             newMember.Lastname = txtLastName.Text;
             newMember.Age = txtAge.Text;
             newMember.Weight = txtWeight.Text;
-            newMember.Gender = cboGender.SelectedItem.ToString();
-            newMember.CreditCardType = cboCardType.SelectedItem.ToString();
+            newMember.Gender = strGender;
+            newMember.CreditCardType = strCardtype;
             newMember.CreditCardNum = txtCardNum.Text;
             newMember.Email = txtEmail.Text;
             newMember.Phonenum = txtPhoneNumber.Text;
-            newMember.ProfessionalGoal = cboPersonalTraining.SelectedItem.ToString();
-            newMember.MembershipType = cblMembershipType.SelectedItem.ToString();
+            newMember.ProfessionalGoal = strGoal;
+            newMember.MembershipType = strType;
             newMember.StartDate = datStartDate.ToString();
             newMember.EndDate = datEndDate.ToString();
             newMember.CostperMonth = strMoCost;
@@ -292,14 +357,29 @@ namespace FitnessClub
                 + "Locker Rental: " + locker.Content.ToString();
             newMember.Total = dblTotal.ToString();
 
+            //read the data in the membership json file
+            string strFilePath = @"..\..\..\Data\Membership.json";
+            try
+            {
+                //use System.IO.File to read the entire data file
+                string jsonData = File.ReadAllText(strFilePath);
+
+                //serialize the json data to a list of pricing 
+                membershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+            
             membershipList.Add(newMember);
 
             //write member into json file
-            string strFilePath = @"..\..\..\Data\Membership.json";
             try
             {
                 string jsonData = JsonConvert.SerializeObject(membershipList);
                 System.IO.File.WriteAllText(strFilePath, jsonData);
+                MessageBox.Show("New customer has been saved.");
             }
             catch (Exception ex)
             {
@@ -326,6 +406,7 @@ namespace FitnessClub
             cboLength.SelectedIndex = -1;
             DateTime dateToday = DateTime.Today;
             dtpStartDate.SelectedDate = dateToday;
+            txtPreviewWindow.Text = "";
 
         }
     }
