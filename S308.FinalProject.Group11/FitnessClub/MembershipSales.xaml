@@ -71,21 +71,16 @@
         </ComboBox>
         <Label x:Name="lblPersonalTraining" Content="Personal Training?" HorizontalAlignment="Left" Height="31" Margin="41,269,0,0" VerticalAlignment="Top" Width="153" TabIndex="5" FontSize="16"/>
         <Label x:Name="lblLocker" Content="Locker Rental?" HorizontalAlignment="Left" Height="31" Margin="41,295,0,0" VerticalAlignment="Top" Width="153" TabIndex="5" FontSize="16"/>
-        <Label x:Name="lblTimeLength" Content="Length:" HorizontalAlignment="Left" Height="34" Margin="240,177,0,0" VerticalAlignment="Top" Width="161" TabIndex="3" FontSize="17.333" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cboLength" HorizontalAlignment="Left" Height="26" Margin="232,213,0,0" VerticalAlignment="Top" Width="149" TabIndex="2" FontSize="17.333">
-            <ComboBoxItem Content="1 Month"/>
-            <ComboBoxItem Content="12 Month"/>
-        </ComboBox>
         <ComboBox x:Name="cboPersonalTraining" HorizontalAlignment="Left" Height="26" Margin="199,274,0,0" VerticalAlignment="Top" Width="63">
             <ComboBoxItem Content="Yes"/>
             <ComboBoxItem Content="No"/>
         </ComboBox>
-        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Height="26" Margin="200,305,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.5,0.5">
+        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Height="26" Margin="201,305,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5">
             <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-2.092"/>
+                    <RotateTransform Angle="-1.489"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </ComboBox.RenderTransform>

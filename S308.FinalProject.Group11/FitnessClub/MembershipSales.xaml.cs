@@ -137,7 +137,7 @@ namespace FitnessClub
             //5. Total = Subtotal + additional features * # of month
             int intLength;
             ComboBoxItem selectedType = (ComboBoxItem)cblMembershipType.SelectedItem;
-            ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
+            ComboBoxItem selectedLength = (ComboBoxItem)cblMembershipType.SelectedItem;
 
             
             //double dblSubtotal = Convert.ToDouble(strSubtotal.Substring(1));
@@ -145,7 +145,7 @@ namespace FitnessClub
             string strCost = GetMonthlyCost();
             double dblCost = Convert.ToDouble(strCost.Substring(1));
             double dblMoCo;
-            if (selectedLength.Content.ToString()=="1 Month")
+            if (selectedLength.Content.ToString().Contains("1 Month"))
             {
                intLength = 1;
                dblMoCo = dblCost/1;
@@ -178,14 +178,20 @@ namespace FitnessClub
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
+            //user must confirm what they selected
+            if(txtPreviewWindow.Text == "")
+            {
+                MessageBox.Show("Preview must be confirmed before entering user's information.");
+                return;
+            }
+
             //get membership type length
             int intLength;
-            ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
+            ComboBoxItem selectedLength = (ComboBoxItem)cblMembershipType.SelectedItem;
             DateTime? datStartDate = dtpStartDate.SelectedDate;
             DateTime datTime1 = (DateTime)datStartDate;
             DateTime datEndDate;
-            if (selectedLength.Content.ToString() == "1 Month")
+            if (selectedLength.Content.ToString().Contains("1 Month"))
             {
                 intLength = 1;
             }
@@ -403,7 +409,6 @@ namespace FitnessClub
             cblMembershipType.SelectedIndex = -1;
             cboPersonalTraining.SelectedIndex = -1;
             cboLocker.SelectedIndex = -1;
-            cboLength.SelectedIndex = -1;
             DateTime dateToday = DateTime.Today;
             dtpStartDate.SelectedDate = dateToday;
             txtPreviewWindow.Text = "";
