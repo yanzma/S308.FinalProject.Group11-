@@ -129,8 +129,7 @@ namespace FitnessClub
                 if(txtPriceChange.Text != "")
                 {
                if (item.Type == strSelectedName)
-                   item.Price = txtPriceChange.Text;
-                    item.Price.ToString("C2");
+                   item.Price = txtPriceChange.Text;                   
                     
                 }
 
