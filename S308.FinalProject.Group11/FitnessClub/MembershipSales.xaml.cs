@@ -22,12 +22,40 @@ namespace FitnessClub
     public partial class MembershipSales : Window
     {
         List<Pricing> pricingList;
+        List<Membership> membershipList;
         public MembershipSales()
         {
             InitializeComponent();
             pricingList = new List<Pricing>();
+            membershipList = new List<Membership>();
+            DateTime dateToday = DateTime.Today;
+            dtpStartDate.SelectedDate = dateToday;
         }
         //Provide a way for user to close window and return to the main menu
+        private string GetMonthlyCost()
+        {
+            string strFilePath = @"..\..\..\Data\Pricing.json";
+            
+            string jsonData = File.ReadAllText(strFilePath);
+            pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
+
+            string strCostpermonth = "";
+            //get combo box selected item index
+
+            ComboBoxItem selectedItem = (ComboBoxItem)cblMembershipType.SelectedItem;
+            string strSelectedName = selectedItem.Content.ToString().Trim();
+
+            //get corresponded item price and avaliability
+            foreach (Pricing item in pricingList)
+            {
+
+                if (item.Type == strSelectedName)
+                {
+                    strCostpermonth = item.Price;
+                }
+            }
+            return strCostpermonth;
+        }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Window winMain = new MainMenu();
@@ -73,19 +101,31 @@ namespace FitnessClub
             }
             ComboBoxItem selectedTraining = (ComboBoxItem)cboPersonalTraining.SelectedItem;
             ComboBoxItem selectedLocker = (ComboBoxItem)cboLocker.SelectedItem;
+            string strPersonalTraining = "";
+            string strLocker = "";
             if (selectedTraining.Content.Equals("Yes"))
             {
                 dblSubtotal += 5;
+                strPersonalTraining = "Yes";
+            }
+            else
+            {
+                strPersonalTraining = "No";
             }
             if(selectedLocker.Content.Equals("Yes"))
             {
                 dblSubtotal += 1;
+                strLocker = "Yes";
+            }
+            else
+            {
+                strLocker = "No";
             }
 
 
             //Clear outputs from previous 
             txtPreviewWindow.Text = "";
-
+            
 
 
             //Calculate
@@ -98,51 +138,63 @@ namespace FitnessClub
             int intLength;
             ComboBoxItem selectedType = (ComboBoxItem)cblMembershipType.SelectedItem;
             ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
-            if (selectedType.Content.("Individual 1 Month" "Two Person 1 Month""Family 1 Month"))
-            {
-                dblSubtotal += 1;
-            }
-            //read price from combo
-            string strSubtotal;
-            foreach (Pricing item in pricingList)
-            {
-                if (item.Type.Equals(selectedType))
-                    strSubtotal = item.Price;
-            }
+
+            
             //double dblSubtotal = Convert.ToDouble(strSubtotal.Substring(1));
             //double  .Parse(strSubtotal,NumberStyles.Currency) *= intLength;
-            if(selectedLength.Content.ToString()=="1 Month")
+            string strCost = GetMonthlyCost();
+            double dblCost = Convert.ToDouble(strCost.Substring(1));
+            double dblMoCo;
+            if (selectedLength.Content.ToString()=="1 Month")
             {
                intLength = 1;
+               dblMoCo = dblCost/1;
+            }
+            else
+            {
+                intLength = 12;
+                dblMoCo = dblCost/12;
+            }
+            double dblSubtotal_2 = dblSubtotal * intLength;
+            double dblTotal = dblSubtotal_2 + dblCost;
+            datEndDate = datTime1.AddMonths(intLength);
+
+
+            string strPreview = "Membership Type: " + selectedType.Content.ToString() + Environment.NewLine
+                + "Start Date: " + datTime1.ToShortDateString() + Environment.NewLine
+                + "End Date: " + datEndDate.ToShortDateString() + Environment.NewLine
+                + "Cost/Month: " + dblMoCo.ToString("C0") + Environment.NewLine
+                + "Subtotal: " + strCost + Environment.NewLine
+                + "Additional Features: " + Environment.NewLine
+                + "Personal Training Plan: " + strPersonalTraining + Environment.NewLine
+                + "Locker Rental: " + strLocker + Environment.NewLine
+                + "Total: " + dblTotal.ToString("C0");
+
+
+            txtPreviewWindow.Text = strPreview;
+
+        }
+
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            
+            int intLength;
+            ComboBoxItem selectedLength = (ComboBoxItem)cboLength.SelectedItem;
+            DateTime? datStartDate = dtpStartDate.SelectedDate;
+            DateTime datTime1 = (DateTime)datStartDate;
+            DateTime datEndDate;
+            if (selectedLength.Content.ToString() == "1 Month")
+            {
+                intLength = 1;
             }
             else
             {
                 intLength = 12;
             }
             datEndDate = datTime1.AddMonths(intLength);
-            string strPreview = "Membership Type: " + selectedType.Content + Environment.NewLine
-                + "Start Date: " + datStartDate + Environment.NewLine
-                + "End Date: "+ datEndDate + Environment.NewLine
-                + 
-
-
-        }
-
-        private void ImportPricingData()
-        {
-            string strFilePath = @"..\..\..\..\Pricing.json";
-
-
-           // string jsonData = File.ReadAllText(strFilePath);
-           // pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
-
-       // }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-
             //After the quote preview, user starts to input their personal info
-            if(txtFirstName.Text == "")
+            if (txtFirstName.Text == "")
             {
                 MessageBox.Show("Please enter your firstname.");
                 return;
@@ -191,7 +243,68 @@ namespace FitnessClub
                 return;
             }
 
-            List<Membership> MembershipList;
+            //create a new member
+            string strMoCost = GetMonthlyCost();
+            ComboBoxItem selectedTraining = (ComboBoxItem)cboPersonalTraining.SelectedItem;
+            ComboBoxItem selectedLocker = (ComboBoxItem)cboLocker.SelectedItem;
+            double dblSubtotal = 0;
+            if (selectedTraining.Content.Equals("Yes"))
+            {
+                dblSubtotal += 5;
+            }
+            if (selectedLocker.Content.Equals("Yes"))
+            {
+                dblSubtotal += 1;
+            }
+            
+            if (selectedLength.Content.ToString() == "1 Month")
+            {
+                intLength = 1;
+            }
+            else
+            {
+                intLength = 12;
+            }
+            double dblSubtotal_2 = dblSubtotal * intLength;
+            double dblCostpermonth = Convert.ToDouble(strMoCost.Substring(1));
+            double dblTotal = dblSubtotal_2 + dblCostpermonth;
+
+            Membership newMember = new Membership();
+            ComboBoxItem personaltraining = (ComboBoxItem)cboPersonalTraining.SelectedItem;
+            ComboBoxItem locker = (ComboBoxItem)cboLocker.SelectedItem;
+            newMember.Firstname = txtFirstName.Text;
+            newMember.Lastname = txtLastName.Text;
+            newMember.Age = txtAge.Text;
+            newMember.Weight = txtWeight.Text;
+            newMember.Gender = cboGender.SelectedItem.ToString();
+            newMember.CreditCardType = cboCardType.SelectedItem.ToString();
+            newMember.CreditCardNum = txtCardNum.Text;
+            newMember.Email = txtEmail.Text;
+            newMember.Phonenum = txtPhoneNumber.Text;
+            newMember.ProfessionalGoal = cboPersonalTraining.SelectedItem.ToString();
+            newMember.MembershipType = cblMembershipType.SelectedItem.ToString();
+            newMember.StartDate = datStartDate.ToString();
+            newMember.EndDate = datEndDate.ToString();
+            newMember.CostperMonth = strMoCost;
+            newMember.Subtotal = dblSubtotal_2.ToString();
+            newMember.AdditionalFeatures = "Additional Features:" + Environment.NewLine
+                + "Personal Training Plan: " + personaltraining.Content.ToString() + Environment.NewLine
+                + "Locker Rental: " + locker.Content.ToString();
+            newMember.Total = dblTotal.ToString();
+
+            membershipList.Add(newMember);
+
+            //write member into json file
+            string strFilePath = @"..\..\..\Data\Membership.json";
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(membershipList);
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process: " + ex.Message);
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -207,6 +320,12 @@ namespace FitnessClub
             txtAge.Text = "";
             txtWeight.Text = "";
             cboFitnessGoal.SelectedIndex = -1;
+            cblMembershipType.SelectedIndex = -1;
+            cboPersonalTraining.SelectedIndex = -1;
+            cboLocker.SelectedIndex = -1;
+            cboLength.SelectedIndex = -1;
+            DateTime dateToday = DateTime.Today;
+            dtpStartDate.SelectedDate = dateToday;
 
         }
     }

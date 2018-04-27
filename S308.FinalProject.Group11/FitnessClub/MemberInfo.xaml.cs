@@ -43,6 +43,7 @@ namespace FitnessClub
             txtLastName.Text = "";
             txtEmail.Text = "";
             txtPhoneNum.Text = "";
+            dtgSearchResult.ItemsSource = "";
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
@@ -52,44 +53,21 @@ namespace FitnessClub
             {
                 MessageBox.Show("You must fill out at least one search field.");
             }
-            if (txtLastName.Text != "")
-            {
-                foreach (Membership item in MembershipList)
-                {
-                    if (item.Lastname != txtLastName.Text)
-                    {
-                        MembershipList.Remove(item);
-                    }
-                }
-            }
 
-            if (txtEmail.Text != "")
-            {
-                foreach (Membership item in MembershipList)
-                {
-                    if (item.Email != txtEmail.Text)
-                    {
-                        MembershipList.Remove(item);
-                    }
-                }
-            }
+            List<Membership> listSearch =
+                MembershipList.Where(m => (m.Lastname.ToUpper() == txtLastName.Text.ToUpper() || (txtLastName.Text == "")) &&
+                (m.Phonenum == txtPhoneNum.Text || txtPhoneNum.Text == "") &&
+                (m.Email.ToUpper() == txtEmail.Text.ToUpper() || txtEmail.Text == "")).ToList();
 
-            if (txtPhoneNum.Text != "")
-            {
-                foreach (Membership item in MembershipList)
-                {
-                    if (item.Phonenum != txtPhoneNum.Text)
-                    {
-                        MembershipList.Remove(item);
-                    }
-                }
-            }
+            dtgSearchResult.ItemsSource = listSearch;
+
         }
+
 
         //read membership jason file
         private void ImportMembershipData()
         {
-            string strFilePath = @"..\..\..\Membership.json";
+            string strFilePath = @"..\..\Data\Membership.json";
 
 
             string jsonData = File.ReadAllText(strFilePath);
